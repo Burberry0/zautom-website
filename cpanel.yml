@@ -1,0 +1,32 @@
+---
+deployment:
+  tasks:
+    # Set deployment path to your actual public_html
+    - export DEPLOYPATH=/home3/hwgcsemy/public_html/
+    
+    # Install dependencies and build
+    - npm ci
+    - npm run build
+    
+    # Remove old files (except important directories like cgi-bin, etc.)
+    - /bin/find $DEPLOYPATH -maxdepth 1 -type f -name "*.html" -delete 2>/dev/null || true
+    - /bin/find $DEPLOYPATH -maxdepth 1 -type f -name "*.css" -delete 2>/dev/null || true
+    - /bin/find $DEPLOYPATH -maxdepth 1 -type f -name "*.js" -delete 2>/dev/null || true
+    - /bin/find $DEPLOYPATH -maxdepth 1 -type f -name "*.json" -delete 2>/dev/null || true
+    - /bin/find $DEPLOYPATH -maxdepth 1 -type f -name "*.txt" -delete 2>/dev/null || true
+    - /bin/find $DEPLOYPATH -maxdepth 1 -type f -name "*.ico" -delete 2>/dev/null || true
+    - /bin/find $DEPLOYPATH -maxdepth 1 -type f -name "*.png" -delete 2>/dev/null || true
+    - /bin/rm -rf $DEPLOYPATH/static 2>/dev/null || true
+    - /bin/rm -rf $DEPLOYPATH/assets 2>/dev/null || true
+    
+    # Copy new build files
+    - /bin/cp -R build/* $DEPLOYPATH/
+    
+    # Copy hidden files like .htaccess
+    - /bin/cp build/.htaccess $DEPLOYPATH/ 2>/dev/null || echo ".htaccess not found, skipping"
+    
+    # Set permissions (may not work on all Bluehost plans)
+    - /bin/chmod 644 $DEPLOYPATH/*.html 2>/dev/null || true
+    - /bin/chmod 644 $DEPLOYPATH/.htaccess 2>/dev/null || true
+    - /bin/chmod -R 755 $DEPLOYPATH/static 2>/dev/null || true
+    - /bin/chmod -R 755 $DEPLOYPATH/assets 2>/dev/null || true
