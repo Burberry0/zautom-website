@@ -20,7 +20,7 @@ const CalendlyButton = ({ children, className = "", onClick }) => {
     e.preventDefault();
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/zautom/proposal-review-call'
+        url: 'https://calendly.com/zautom/discovery-call'
       });
     }
     if (onClick) onClick(e);
@@ -68,7 +68,7 @@ const GetStartedButton = ({ isMobile = false }) => {
     e.preventDefault();
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/zautom/proposal-review-call'
+        url: 'https://calendly.com/zautom/discovery-call'
       });
     }
   };

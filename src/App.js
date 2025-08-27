@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Features from './Features';
 import Service1 from './pages/services/Service1';
@@ -441,7 +441,7 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-        </div>
+          </div>
       </section>
 
       {/* Pricing Section */}
