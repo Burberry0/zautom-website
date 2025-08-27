@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import './ServicePage.css';
 
 const Service6 = () => {
@@ -89,9 +88,7 @@ const Service6 = () => {
               </div>
             </div>
             <div className="service-hero-image">
-              <div className="image-placeholder">
-                <span>Custom Integration Dashboard</span>
-              </div>
+              <img src="https://images.unsplash.com/photo-1542382257-80dedb725088?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Custom Connector Development" className="service-image" />
             </div>
           </div>
         </div>
