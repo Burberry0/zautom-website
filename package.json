@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && npm run generate-htaccess",
+    "build": "react-scripts build",
     "build:no-htaccess": "react-scripts build",
     "generate-htaccess": "node scripts/generate-htaccess.js",
     "test": "react-scripts test",

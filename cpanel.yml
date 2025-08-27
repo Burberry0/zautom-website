@@ -4,9 +4,8 @@ deployment:
     # Set deployment path to your actual public_html
     - export DEPLOYPATH=/home3/hwgcsemy/public_html/
     
-    # Install dependencies and build
-    - npm ci
-    - npm run build
+    # Note: Build should be done locally before pushing to GitHub
+    # React apps need to be pre-built since cPanel deployment may not have Node.js/npm
     
     # Remove old files (except important directories like cgi-bin, etc.)
     - /bin/find $DEPLOYPATH -maxdepth 1 -type f -name "*.html" -delete 2>/dev/null || true
