@@ -20,7 +20,7 @@ const CalendlyButton = ({ children, className = "", onClick }) => {
     e.preventDefault();
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/shopworldwide3000/new-meeting-1'
+        url: 'https://calendly.com/zautom/proposal-review-call'
       });
     }
     if (onClick) onClick(e);
@@ -68,7 +68,7 @@ const GetStartedButton = ({ isMobile = false }) => {
     e.preventDefault();
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/shopworldwide3000/new-meeting-1'
+        url: 'https://calendly.com/zautom/proposal-review-call'
       });
     }
   };
